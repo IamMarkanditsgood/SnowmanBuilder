@@ -21,8 +21,10 @@ public abstract class BasicPopup : MonoBehaviour
 
     public virtual void Subscribe()
     {
-        if(_closeButton != null)
+
+        if (_closeButton != null)
         {
+            
             _closeButton.onClick.AddListener(ClosePressed);
         }
     }
@@ -49,6 +51,7 @@ public abstract class BasicPopup : MonoBehaviour
 
     public virtual void ClosePressed()
     {
+        
         Hide();
     }
 

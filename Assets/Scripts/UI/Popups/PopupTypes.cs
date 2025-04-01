@@ -1,4 +1,6 @@
 public enum PopupTypes 
 {
-    WinQuiz,
+    Win,
+    Lose,
+    Settings,
 }

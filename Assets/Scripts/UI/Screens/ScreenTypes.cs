@@ -1,8 +1,7 @@
 public enum ScreenTypes
 {
-    MainMenu,
-    Info,
-    Gods,
-    GodInfo,
-    GodQuiz,
+    Home,
+    Profile,
+    Shop,
+    GameScreen,
 }

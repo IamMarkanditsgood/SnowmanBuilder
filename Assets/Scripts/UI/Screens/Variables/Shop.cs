@@ -17,6 +17,8 @@ public class Shop : BasicScreen
     [SerializeField] private Image _bg;
     [SerializeField] private Sprite[] _backGrounds;
     [SerializeField] private GameObject[] _panels;
+    [SerializeField] private Image[] _panelImage;
+    [SerializeField] private Sprite[] _panelSprites;
 
     private TextManager _textManager = new TextManager();
 
@@ -63,16 +65,24 @@ public class Shop : BasicScreen
         if (currentBG == 0)
         {
             _panels[0].SetActive(false);
+            _panelImage[1].sprite = _panelSprites[0];
+            _panelImage[2].sprite = _panelSprites[1];
         }
         else if(currentBG == _backGrounds.Length - 1)
         {
             _panels[2].SetActive(false);
+            _panelImage[0].sprite = _panelSprites[_panelSprites.Length - 2];
+            _panelImage[1].sprite = _panelSprites[_panelSprites.Length-1];
         }
         else
         {
             _bgNamePrevText.text = "Background" + (currentBG);
             _panels[0].SetActive(true);
             _panels[2].SetActive(true);
+
+            _panelImage[0].sprite = _panelSprites[currentBG-1];
+            _panelImage[1].sprite = _panelSprites[currentBG];
+            _panelImage[2].sprite = _panelSprites[currentBG+1];
         }
         if(!PlayerPrefs.HasKey("CurrentBG"))
         {

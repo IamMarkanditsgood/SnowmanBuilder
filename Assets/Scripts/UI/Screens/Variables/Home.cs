@@ -8,23 +8,26 @@ public class Home : BasicScreen
 {
     [SerializeField] private Button _play;
     [SerializeField] private Button _settings;
-    [SerializeField] private Button _profile;
+    [SerializeField] private Button _status;
     [SerializeField] private Button _shop;
+    [SerializeField] private Button _profilePopup;
 
     void Start()
     {
         _play.onClick.AddListener(PlayGame);
         _settings.onClick.AddListener(Settings);
-        _profile.onClick.AddListener(Profile);
+        _status.onClick.AddListener(Profile);
         _shop.onClick.AddListener(Shop);
+        _profilePopup.onClick.AddListener(ProfilePopup);
     }
 
     void OnDestroy()
     {
         _play.onClick.RemoveListener(PlayGame);
         _settings.onClick.RemoveListener(Settings);
-        _profile.onClick.RemoveListener(Profile);
+        _status.onClick.RemoveListener(Profile);
         _shop.onClick.RemoveListener(Shop);
+        _profilePopup.onClick.RemoveListener(ProfilePopup);
     }
 
     public override void ResetScreen()
@@ -54,5 +57,9 @@ public class Home : BasicScreen
     private void Shop()
     {
         UIManager.Instance.ShowScreen(ScreenTypes.Shop);
+    }
+    private void ProfilePopup()
+    {
+        UIManager.Instance.ShowPopup(PopupTypes.ProfilePopup);
     }
 }

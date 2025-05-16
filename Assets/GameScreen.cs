@@ -62,7 +62,9 @@ public class GameScreen : MonoBehaviour
         PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + newResult);
         PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + newResult);
 
-        if(PlayerPrefs.GetInt("MaxDistance") < (newResult / 1000))
+        PlayerPrefs.SetInt("TotalCoins", PlayerPrefs.GetInt("TotalCoins") + newResult);
+
+        if (PlayerPrefs.GetInt("MaxDistance") < (newResult / 1000))
         {
             PlayerPrefs.SetInt("MaxDistance", newResult / 1000);
         }
